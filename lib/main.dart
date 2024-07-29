@@ -97,3 +97,33 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+class MyHomePage1 extends StatelessWidget {
+  const MyHomePage1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (BuildContext context) => MainProvider(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Тест'),
+        ),
+        body: Builder(builder: (context) {
+          return Column(
+            children: [
+              TextButton(
+                onPressed: context.read<MainProvider>().addStrings,
+                child: const Text('Кнопка'),
+              ),
+              const Text(
+                'Текст должен быть в середине',
+                style: TextStyle(color: Colors.black),
+              ),
+            ],
+          );
+        }),
+      ),
+    );
+  }
+}
