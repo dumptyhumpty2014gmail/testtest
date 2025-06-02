@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:testtest/my_image.dart';
 
 import 'provider/main_provider.dart';
 
@@ -41,6 +42,7 @@ class MyHomePage extends StatelessWidget {
                 onPressed: context.read<MainProvider>().addStrings,
                 child: const Text('Добавить'),
               ),
+              MyImage(image: Image.asset('assets/avatar.png')),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
